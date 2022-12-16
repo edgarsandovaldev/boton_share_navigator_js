@@ -1,0 +1,30 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-navegacion',
+  templateUrl: './navegacion.component.html',
+  styleUrls: ['./navegacion.component.scss']
+})
+export class NavegacionComponent {
+// qaqui esta la funcion //
+ClickFun(){
+  if(navigator.share) {
+    navigator.share({
+      text: 'Boligrafos Personalizados con Marcación: ',
+      url: 'https:/boligrafospersonalizados.co'
+    }).then(() => {
+      console.log('Thanks for sharing!');
+    })
+    .catch(console.error);
+  }
+}
+}
+
+
+
+
+
+
+// creamos la funcion en el componente y luego llamaos la funcion con el evento click en el boton de Angular (click)="ClickFun() en el HTML asi: 
+
+<button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" (click)="ClickFun()" >
