@@ -6,18 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./navegacion.component.scss']
 })
 export class NavegacionComponent {
-// qaqui esta la funcion //
-ClickFun(){
-  if(navigator.share) {
-    navigator.share({
-      text: 'Boligrafos Personalizados con Marcación: ',
-      url: 'https:/boligrafospersonalizados.co'
-    }).then(() => {
-      console.log('Thanks for sharing!');
-    })
-    .catch(console.error);
-  }
-}
+
+// Aqui esta la funcion //
+    ClickFun(){
+      if(navigator.share)
+      {navigator.share({ text: 'Esta aplicación te será muy útil', url: ''})
+      .then(() => {console.log('Gracias por compartir!');})
+      .catch(console.error);
+      }
+    }
 }
 
 
